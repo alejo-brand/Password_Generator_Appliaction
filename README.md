@@ -1,93 +1,47 @@
-# 03 JavaScript: Password Generator
+## Password_Generator_Application
 
-## Your Task
+In this project the main goal was to create a program that generates secure passwords according to the user preferences in terms of the usage of lower case, uper case, numbers and special characters.
+ 
+ to achieve what was described I decided to create an Object that holds the arrays that contain all the possible choices for the computer to pick according to the user prompt.
 
-This week’s homework requires you to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
+ ![image](https://user-images.githubusercontent.com/69653106/97068803-bc5a5a80-157f-11eb-8177-cb01548a359a.png)
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of Password Special Characters from the OWASP Foundation](https://www.owasp.org/index.php/Password_special_characters).
+## the array CharacerBase
+This array was crated with the purpose of storing all the characters that will get concatenated accordding to the if statements. this process will be detailed later in this documment.
 
-## User Story
+## THE RANDOMPASSWORD ARRAY AND PSEUDOCODE
+This Array will store the final passoword created at the end of the process to later print it on the screen. 
+The pseudo code used to create this app is shoun in the picture.
 
-```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-```
+![image](https://user-images.githubusercontent.com/69653106/97068972-41923f00-1581-11eb-89a2-e3991d9f3b8a.png)
 
-## Acceptance Criteria
+## FUNCTION GENERATEPASSWORD
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
+In this function we can se almost the totallity of the process. we start with prompting the user for how many characters he/she wants to use. then to restrict the code from running if the user input is invalid, we check the following condition.
+![image](https://user-images.githubusercontent.com/69653106/97069032-e14fcd00-1581-11eb-87a4-ef3bed633798.png)
 
-## Mock-Up
+the next step is defining the variables that will be needed in the process and confirm with the user to obtain a true or a false value.
+![image](https://user-images.githubusercontent.com/69653106/97069105-95515800-1582-11eb-91dc-3860cb256fed.png)
 
-The following image shows the web application's appearance and functionality:
+## If/Else Statements
 
-![password generator demo](./Assets/03-javascript-homework-demo.png)
+## numbers
+![image](https://user-images.githubusercontent.com/69653106/97069105-95515800-1582-11eb-91dc-3860cb256fed.png)
 
-## Grading Requirements
+this condition states the if the user chose to use numbers, then the empty array CharacterBase will be filled up with the concatenation of the values of "numbers"
 
-This homework is graded based on the following criteria: 
+## lower case 
+![image](https://user-images.githubusercontent.com/69653106/97069200-58d22c00-1583-11eb-97ff-b095a5383d3f.png)
 
-### Technical Acceptance Criteria: 40%
+In this case, if the user chose to use lower case, we will concatenate the value of IsLower in the the CharacterBase Array that will already be holding "numbers" if the numbers condition was true. the same process and analysis is followed for all the variables as it can be seen in the picture.
 
-* Satisfies all of the above acceptance criteria plus the following:
+![image](https://user-images.githubusercontent.com/69653106/97069268-080f0300-1584-11eb-8ada-7ee0c150b4dc.png)
 
-  * The homework should not produce any errors in the console when you inspect it using Chrome DevTools.
+## FOR LOOP
 
-### Deployment: 32%
+the last step will be creating a for loop that will run as many times as the number of characters chosen by the use and it will store the vaules according to the conditions described above in the variable named RandomPassword and return the final password to the user on the screen.
 
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
+![image](https://user-images.githubusercontent.com/69653106/97069366-ad29db80-1584-11eb-9f06-bb7c67065569.png)
 
 
-## Review
 
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.

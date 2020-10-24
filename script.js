@@ -8,23 +8,27 @@ var PasswordCharacter = {
   SpecialCharacter: ["~","!","@","#","$","%","^","&","*","(",")","_","-","+","{","}","?","<",">","/"],
   CharacterBase: [],
 }
+
+var RandomPassword = [];
 // Prompt the user for pass length and store it in a variable
 // confirm the use of numbers
 // confirm the use of lower case
 // confirm the use of upper case
 // confirm the use of special characters
+// Create a for loop that "loops" through the number of characters chosen by the user
+// store the result of the loop in a variable and print the result on the screen.#
 
 function generatePassword() {
   var NumberCharChoice = prompt ("How long do you want the password to be? (must be between 8-128 characters)");
+  if (NumberCharChoice < 8 || NumberCharChoice > 128) {
+    alert ("Password Must be between 8 and 128 characters");
+    return;
+  } 
   var IsNumbers = confirm ("Do you want to use numbers?");
   var IsLower = confirm ("Do you want to use lower case?");
   var IsUpper = confirm ("Do you want to use Uper Case?");
-  var IsSpecial = confirm ("Do you want to use Special Character?");
-
-    if (NumberCharChoice < 8 || NumberCharChoice > 128) {
-      alert ("Password Must be between 8 and 128 characters");
-      return;
-    } 
+  var IsSpecial = confirm ("Do you want to use Special Character?"); 
+  
     if (IsNumbers === true) {
       PasswordCharacter.CharacterBase = PasswordCharacter.Numbers.concat(PasswordCharacter.CharacterBase);
       console.log(PasswordCharacter.CharacterBase)
@@ -46,10 +50,10 @@ function generatePassword() {
     }
     
    for (var i = 0; i<NumberCharChoice; i++){
-     var RandomPassword = PasswordCharacter.CharacterBase [Math.floor(Math.random()*CharacterBase)];
+     RandomPassword =  RandomPassword + PasswordCharacter.CharacterBase[Math.floor(Math.random()*PasswordCharacter.CharacterBase.length)] ;
    }
+   return (RandomPassword);
 }
-
 
 // Write password to the #password input
 function writePassword() {
