@@ -35,13 +35,20 @@ this condition states the if the user chose to use numbers, then the empty array
 
 In this case, if the user chose to use lower case, we will concatenate the value of IsLower in the the CharacterBase Array that will already be holding "numbers" if the numbers condition was true. the same process and analysis is followed for all the variables as it can be seen in the picture.
 
+## IF/ELSE STATEMENTS ADITIONAL NOTE:
+To guarantee that at least one of each (Numbers,Lower case, Upper case, and special characters) is pushed to the RandomPassword in case that all boolean variables are true. we added the following line of code in every If Statement
+
+
 ![image](https://user-images.githubusercontent.com/69653106/97069268-080f0300-1584-11eb-8ada-7ee0c150b4dc.png)
 
-## FOR LOOP
+## WHILE LOOP
 
-the last step will be creating a for loop that will run as many times as the number of characters chosen by the use and it will store the vaules according to the conditions described above in the variable named RandomPassword and return the final password to the user on the screen.
+The while loop created will cicle according to the boolean values of the IF/ELSE statements as long as the variable RandomPasword is lesser than the NumberCharChoice which is the number selected by the user. 
+the code excecuted in the loop will also pick random characters from the CharacterBase array.
 
-![image](https://user-images.githubusercontent.com/69653106/97069366-ad29db80-1584-11eb-9f06-bb7c67065569.png)
+![image](https://user-images.githubusercontent.com/69653106/97096641-0a289e80-1624-11eb-872a-20aed5468132.png)
+
+
 
 
 This is the link to the live Website.

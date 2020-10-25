@@ -31,29 +31,36 @@ function generatePassword() {
   
     if (IsNumbers === true) {
       PasswordCharacter.CharacterBase = PasswordCharacter.Numbers.concat(PasswordCharacter.CharacterBase);
-      console.log(PasswordCharacter.CharacterBase)
+      RandomPassword= PasswordCharacter.Numbers[Math.floor(Math.random()*PasswordCharacter.Numbers.length)];
+      console.log(RandomPassword);
+
     }
 
     if (IsLower === true) {
       PasswordCharacter.CharacterBase = PasswordCharacter.LowerCase.concat(PasswordCharacter.CharacterBase);
-      console.log(PasswordCharacter.CharacterBase)
+      RandomPassword= PasswordCharacter.LowerCase[Math.floor(Math.random()*PasswordCharacter.LowerCase.length)];
+      
     }
 
-    if (IsUpper === true) {
+    if (IsUpper === true) { 
       PasswordCharacter.CharacterBase = PasswordCharacter.UpperCase.concat(PasswordCharacter.CharacterBase);
-      console.log(PasswordCharacter.CharacterBase)
+      RandomPassword= PasswordCharacter.UpperCase[Math.floor(Math.random()*PasswordCharacter.UpperCase.length)];
+      
     }
 
     if (IsSpecial === true) {
       PasswordCharacter.CharacterBase = PasswordCharacter.SpecialCharacter.concat(PasswordCharacter.CharacterBase);
-      console.log(PasswordCharacter.CharacterBase)
+      RandomPassword= PasswordCharacter.SpecialCharacter[Math.floor(Math.random()*PasswordCharacter.SpecialCharacter.length)];
     }
     
-   for (var i = 0; i<NumberCharChoice; i++){
-     RandomPassword =  RandomPassword + PasswordCharacter.CharacterBase[Math.floor(Math.random()*PasswordCharacter.CharacterBase.length)] ;
+    while (RandomPassword.length < NumberCharChoice){
+      RandomPassword =  RandomPassword + PasswordCharacter.CharacterBase[Math.floor(Math.random()*PasswordCharacter.CharacterBase.length)] ;
    }
    return (RandomPassword);
-}
+
+  }
+  
+
 
 // Write password to the #password input
 function writePassword() {
